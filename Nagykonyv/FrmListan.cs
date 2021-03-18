@@ -26,14 +26,9 @@ namespace Nagykonyv
                 "DataDirectory",
                 Path.GetDirectoryName(
                     Assembly.GetExecutingAssembly()
-                    .Location.Replace(@"bin\Debug", @"\Resources")));
-
-            //connectionString = new SqlConnection(
-            //    @"Server = (localdb)\MSSQLLocalDB;" +
-            //    @"AttachDbFileName=|DataDirectory|nagykonyvDTS.mdf;");
+                    .Location.Replace(@"bin\Debug", @"\")));
             connectionString = new SqlConnection(
-                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Axmart\source\repos\Nagykonyv\Nagykonyv\nagykonyvDTS.mdf;Integrated Security=True");
-
+                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\nagykonyvDTS.mdf;Integrated Security=True");
             InitializeComponent();
         }
 
